@@ -1,0 +1,231 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MyActivity">
+
+     <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/topLayout">
+
+     <TextView
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/bill_text"
+         android:layout_weight="1.2"
+         android:textSize="20sp"/>
+
+    <EditText
+        android:hint="@string/bill_text"
+        android:id="@+id/editBill"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+         <TextView
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_weight="1.2"
+         android:text="@string/tip_text"
+         android:textSize="20sp"/>
+
+         <EditText
+             android:hint="@string/tip_text"
+             android:id="@+id/editTip"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"/>
+
+     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="40sp"
+        android:id="@+id/secundLayout"
+        android:layout_below="@+id/topLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_below="@+id/textChangeTip"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textChangeTip"
+        android:text="@string/heading_seekbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+     <TextView
+         android:layout_marginLeft="78sp"
+         android:layout_toRightOf="@id/textChangeTip"
+         android:text="@string/heading_final_bill"
+         android:id="@+id/textFinalBill"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/editFinalBill"
+            android:layout_marginLeft="50dp"
+            android:layout_below="@id/textFinalBill"
+            android:layout_toRightOf="@id/seekBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/introductionText"
+        android:layout_below="@id/secundLayout"
+        android:text="@string/heading_introduction"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+         android:layout_marginTop="20dp"
+         android:layout_below="@+id/introductionText"
+         android:id="@+id/checkboxLayout"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content">
+
+         <CheckBox
+             android:id="@+id/checkboxFreindly"
+             android:text="@string/checkbox_friendly"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"/>
+
+         <CheckBox
+             android:id="@+id/checkboxSpecials"
+             android:text="@string/checkbox_specials"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"/>
+
+
+         <CheckBox
+             android:id="@+id/checkboxOpinion"
+             android:text="@string/checkbox_opinion"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"/>
+
+
+      </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/availabilityText"
+        android:layout_below="@id/checkboxLayout"
+        android:text="@string/heading_availibility"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+
+        android:id="@+id/radiusLayout"
+        android:layout_below="@+id/availabilityText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButtonBad"
+            android:text="@string/radio_bad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="17"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonOk"
+            android:text="@string/radio_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="17"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonGood"
+            android:text="@string/radio_good"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="17"/>
+        </RadioGroup>
+
+ </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/spinnerText"
+        android:layout_below="@+id/radiusLayout"
+        android:text="@string/waitress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Spinner
+        android:layout_below="@id/spinnerText"
+        android:id="@+id/ratingSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </Spinner>
+
+    <RelativeLayout
+        android:padding="20dp"
+        android:id="@+id/timerLayout"
+        android:layout_below="@+id/ratingSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ratingSpinner">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:id="@+id/buttonLayout"
+        android:layout_below="@+id/chronometer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="@string/start_timer"
+            android:id="@+id/startTimerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:text="@string/pause_timer"
+            android:id="@+id/pauseTimerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/stopTimerBtn"
+            android:text="@string/reset_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <Chronometer
+       android:textSize="30dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/chronometer"
+        android:layout_below="@+id/ratingSpinner"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
